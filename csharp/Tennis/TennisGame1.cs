@@ -24,7 +24,8 @@ namespace Tennis
         public string GetScore()
         {
             string score = "";
-            if (m_score1 == m_score2)
+            var sameScore = m_score1 == m_score2;
+            if (sameScore)
             {
                 switch (m_score1)
                 {
