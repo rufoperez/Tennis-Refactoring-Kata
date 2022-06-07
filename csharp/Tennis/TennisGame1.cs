@@ -52,27 +52,7 @@ namespace Tennis
             }
             else
             {
-                for (var i = 1; i < 3; i++)
-                {
-                    var tempScore = 0;
-                    if (i == 1) tempScore = player1.Score;
-                    else { score += "-"; tempScore = player2.Score; }
-                    switch (tempScore)
-                    {
-                        case 0:
-                            score += "Love";
-                            break;
-                        case 1:
-                            score += "Fifteen";
-                            break;
-                        case 2:
-                            score += "Thirty";
-                            break;
-                        case 3:
-                            score += "Forty";
-                            break;
-                    }
-                }
+                score = $"{player1.GetScore()}-{player2.GetScore()}";
             }
             return score;
         }

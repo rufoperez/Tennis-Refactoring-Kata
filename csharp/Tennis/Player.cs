@@ -15,4 +15,19 @@ public class Player
     {
         return new Player(name);
     }
+
+    public string GetScore()
+    {
+        switch (Score)
+        {
+            case 0:
+                return "Love";
+            case 1:
+                return "Fifteen";
+            case 2:
+                return "Thirty";
+            default:
+                return "Forty";
+        }
+    }
 }
