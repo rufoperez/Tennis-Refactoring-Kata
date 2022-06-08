@@ -3,17 +3,15 @@ namespace Tennis;
 public class Player
 {
     public int Score { get; set; }
-    public string Name { get; }
 
-    private Player(string name)
+    private Player()
     {
-        this.Name = name;
         this.Score = 0;
     }
 
-    public static Player CreatePlayer(string name)
+    public static Player CreatePlayer()
     {
-        return new Player(name);
+        return new Player();
     }
 
     public string GetScore()

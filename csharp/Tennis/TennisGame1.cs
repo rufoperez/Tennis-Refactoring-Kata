@@ -5,10 +5,10 @@ namespace Tennis
         private readonly Player player1;
         private readonly Player player2;
 
-        public TennisGame1(string player1Name, string player2Name)
+        public TennisGame1()
         {
-            player1 = Player.CreatePlayer(player1Name);
-            player2 = Player.CreatePlayer(player2Name);
+            player1 = Player.CreatePlayer();
+            player2 = Player.CreatePlayer();
         }
 
         public void WonPoint(string playerName)
@@ -30,6 +30,11 @@ namespace Tennis
             {
                 return GetScoreWhenDeuceOrWin();
             }
+            return GetGeneralScore();
+        }
+
+        private string GetGeneralScore()
+        {
             return $"{player1.GetScore()}-{player2.GetScore()}";
         }
 
