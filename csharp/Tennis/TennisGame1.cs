@@ -35,35 +35,25 @@ namespace Tennis
 
         private string GetScoreWhenDeuceOrWin()
         {
-            string score;
             var minusResult = player1.Score - player2.Score;
-            if (minusResult == 1) score = "Advantage player1";
-            else if (minusResult == -1) score = "Advantage player2";
-            else if (minusResult >= 2) score = "Win for player1";
-            else score = "Win for player2";
-            return score;
+            return minusResult switch
+            {
+                1 => "Advantage player1",
+                -1 => "Advantage player2",
+                >= 2 => "Win for player1",
+                _ => "Win for player2"
+            };
         }
 
         private string GetScoreWhenIsEqual()
         {
-            string score;
-            switch (player1.Score)
+            return player1.Score switch
             {
-                case 0:
-                    score = "Love-All";
-                    break;
-                case 1:
-                    score = "Fifteen-All";
-                    break;
-                case 2:
-                    score = "Thirty-All";
-                    break;
-                default:
-                    score = "Deuce";
-                    break;
-            }
-
-            return score;
+                0 => "Love-All",
+                1 => "Fifteen-All",
+                2 => "Thirty-All",
+                _ => "Deuce"
+            };
         }
     }
 }
