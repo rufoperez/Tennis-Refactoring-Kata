@@ -21,21 +21,16 @@ namespace Tennis
 
         public string GetScore()
         {
-            string score = "";
             var sameScore = player1.Score == player2.Score;
             if (sameScore)
             {
-                score = GetScoreWhenIsEqual();
+                return GetScoreWhenIsEqual();
             }
-            else if (player1.Score >= 4 || player2.Score >= 4)
+            if (player1.Score >= 4 || player2.Score >= 4)
             {
-                score = GetScoreWhenDeuceOrWin();
+                return GetScoreWhenDeuceOrWin();
             }
-            else
-            {
-                score = $"{player1.GetScore()}-{player2.GetScore()}";
-            }
-            return score;
+            return $"{player1.GetScore()}-{player2.GetScore()}";
         }
 
         private string GetScoreWhenDeuceOrWin()
